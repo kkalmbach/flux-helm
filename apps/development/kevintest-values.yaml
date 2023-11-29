@@ -4,6 +4,8 @@ metadata:
   name: kevintest
   namespace: development
 spec:
+  metadata:
+      namespace: development
   chart:
     spec:
       version: "1.0.0"
