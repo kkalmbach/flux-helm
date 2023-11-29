@@ -1,7 +1,7 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: kevintest
+  name: platform-test-svc
   namespace: development
 spec:
   chart:

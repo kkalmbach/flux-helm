@@ -1,24 +1,23 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: kevintest
+  name: platform-test-svc
 spec:
-  releaseName: kevintest
+  releaseName: platform-test-svc
   chart:
     spec:
       chart: xplat-service
       sourceRef:
         kind: HelmRepository
         name: xplat-helm-repo
+        snamespace: flux-system
   interval: 50m
   install:
     remediation:
       retries: 3
-  # Default values
-  # https://github.com/stefanprodan/podinfo/blob/master/charts/podinfo/values.yaml
   values:
     service:
-      name: kevintest
+      name: platform-test-svc
       port: 4000
       readinessProbe:
         path: /

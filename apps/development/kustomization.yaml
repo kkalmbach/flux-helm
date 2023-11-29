@@ -3,8 +3,8 @@ kind: Kustomization
 namespace: development
 resources:
   - namespace.yaml
-  - ../base/kevintest
+  - ../base/platform-test-svc
 patches:
-  - path: kevintest-values.yaml
+  - path: platform-test-svc-values.yaml
     target:
       kind: HelmRelease
