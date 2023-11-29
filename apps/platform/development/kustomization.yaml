@@ -1,6 +1,6 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-namespace: development
+namespace: platform-development
 resources:
   - namespace.yaml
   - ../base/platform-test-svc
@@ -8,3 +8,4 @@ patches:
   - path: platform-test-svc-values.yaml
     target:
       kind: HelmRelease
+      name: platform-test-svc

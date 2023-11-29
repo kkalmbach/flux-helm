@@ -2,7 +2,7 @@ apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: platform-test-svc
-  namespace: development
+  namespace: platform-qa
 spec:
   chart:
     spec:
@@ -10,9 +10,5 @@ spec:
   test:
     enable: false
   values:
-    ingress:
-      hosts:
-        - host: podinfo.staging
-          paths:
-            - path: /
-              pathType: ImplementationSpecific
+    image:
+      tag: 1.0.0

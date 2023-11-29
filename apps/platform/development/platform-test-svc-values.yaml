@@ -2,13 +2,10 @@ apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: platform-test-svc
-  namespace: qa
+  namespace: platform-development
 spec:
   chart:
     spec:
       version: "1.0.0"
   test:
     enable: false
-  values:
-    image:
-      tag: 1.0.0

@@ -11,6 +11,7 @@ spec:
         kind: HelmRepository
         name: xplat-helm-repo
         namespace: flux-system
+
   interval: 50m
   install:
     remediation:
