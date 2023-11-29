@@ -4,5 +4,6 @@ metadata:
   name: xplat-helm-repo
   namespace: development
 spec:
+  type: oci
   interval: 5m
   url: oci://483817578804.dkr.ecr.us-east-2.amazonaws.com/xplat-service
