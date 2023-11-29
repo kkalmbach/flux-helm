@@ -1,0 +1,46 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: kevintest
+spec:
+  releaseName: kevintest
+  chart:
+    spec:
+      chart: xplat-service
+      sourceRef:
+        kind: HelmRepository
+        name: xplat-helm-repo
+  interval: 50m
+  install:
+    remediation:
+      retries: 3
+  # Default values
+  # https://github.com/stefanprodan/podinfo/blob/master/charts/podinfo/values.yaml
+  values:
+    service:
+      name: kevintest
+      port: 4000
+      readinessProbe:
+        path: /
+      livenessProbe:
+        enabled: true
+        path: /
+      startupProbe:
+        enabled: true
+        path: /
+    ingress:
+      enabled: false
+    scaling:
+      enabled: false
+    image:
+      registry: 483817578804.dkr.ecr.us-east-2.amazonaws.com
+      repository: kevin
+      tag: 1.1.0
+    resources:
+      limits:
+        cpu: 1
+        memory: 4Gi
+      requests:
+        cpu: .1
+        memory: 1Gi
+
