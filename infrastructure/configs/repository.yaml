@@ -1,0 +1,10 @@
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  name: xplat-helm-repo
+  namespace: flux-system
+spec:
+  provider: aws
+  type: oci
+  interval: 5m
+  url: oci://483817578804.dkr.ecr.us-east-2.amazonaws.com/helm
