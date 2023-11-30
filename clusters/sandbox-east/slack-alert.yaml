@@ -13,5 +13,6 @@ spec:
     name: '*'
   - kind: HelmRelease
     name: '*'
+    namespace: 'platform-qa'
   providerRef:
     name: slack
